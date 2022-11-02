@@ -9,20 +9,19 @@ const {
 const url = require('url');
 const path = require('path');
 const fs = require('fs');
-// const execSeries = require('exec-series');
+const execSeries = require('exec-series');
 let win;
 let addWindow;
 
 function createWindow(argument) {
     win = new BrowserWindow({
         alwaysOnTop: true,
-        width: 450,
-        height: 320,
-        // 'auto-hide-menu-bar': true,
-        // webPreferences: {
-        //     allowRunningInsecureContent: true,
-        //     webSecurity: false
-        // },
+        width: 470,
+        height: 360,
+         webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false,
+        }
     });
     win.loadURL(`file://${__dirname}/index.html`);
     win.on('closed', function() {

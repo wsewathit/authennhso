@@ -1,4 +1,8 @@
 const execSeries = require('exec-series');
+require('dotenv').config()
+console.log(process.env);
+console.log(process.env.myconfig);
+
 new Vue({
     el: '#IndexController',
     data: {
@@ -18,7 +22,7 @@ new Vue({
     methods: {
         PrintQueue (vn){
             console.log('vn',vn);
-            execSeries(['D:\\NHSOAUTHEN65\\Print_QOPD.exe '+vn]);
+            execSeries([process.env.PathPrint+' '+vn]);
         },
         async focusInput() {},
         async actionload() {},
@@ -72,7 +76,7 @@ new Vue({
                 method: 'GET',
                 redirect: 'follow'
             };
-            await fetch(`http://172.199.9.239/coreapi/api/v1/get_patient/${cid}`, requestOptions).then(responses => responses.json()).then(results => {
+            await fetch(`${process.env.apiPostAuthen}/${cid}`, requestOptions).then(responses => responses.json()).then(results => {
                 console.log('reultsCheckPatient', results)
                 if (results.status == true) {
                     this.OnDataFirst = false;

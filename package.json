@@ -6,13 +6,13 @@
   "author": "Jane Doe",
   "license": "MIT",
   "devDependencies": {
-  "electron-packager": "^13.1.1"
+    "electron-packager": "^13.1.1"
   },
   "dependencies": {
+    "dotenv": "^16.0.3",
     "electron": "^4.1.0",
-   "exec-series": "^1.0.3",
+    "exec-series": "^1.0.3",
     "sweetalert2": "^11.4.33"
-
   },
   "scripts": {
     "start": "electron .",
