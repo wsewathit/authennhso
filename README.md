@@ -1,6 +1,6 @@
 # authennhso
-Electron 4.1
-# RUN COMMAND 
+
+# INSTALL PROGRAM 
 COPPY FILE https://github.com/wsewathit/authennhso/tree/main/release-builds/NHSOAUTHEN_V651102
 
 CONFIG EXAMPLE.ENV 
